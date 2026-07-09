@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   ssr: true,
   srcDir: 'app/',
-  compatibilityDate: '2025-01-01',
+  compatibilityDate: '2026-07-10',
   devtools: { enabled: true },
   css: ['~/assets/css/extracted.css'],
   app: {

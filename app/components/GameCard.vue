@@ -9,12 +9,14 @@ defineProps<{
 const emit = defineEmits<{
   play: []
 }>()
+
+const assetUrl = useAssetUrl()
 </script>
 
 <template>
   <article class="game-card" :style="{ '--delay': `${(index || 0) * 70}ms` }">
     <NuxtLink class="game-card-media" :to="card.href" :aria-label="`${card.eyebrow} page`">
-      <img :src="card.image" :alt="card.eyebrow" loading="eager">
+      <img :src="assetUrl(card.image)" :alt="card.eyebrow" loading="eager">
     </NuxtLink>
 
     <div class="game-card-shine" aria-hidden="true" />

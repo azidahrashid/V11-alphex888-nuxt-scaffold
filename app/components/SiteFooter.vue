@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { footerNotice } from '~/data/site'
+
+const assetUrl = useAssetUrl()
 </script>
 
 <template>
@@ -7,7 +9,7 @@ import { footerNotice } from '~/data/site'
     <div class="footer-inner">
       <div class="footer-top">
         <NuxtLink class="footer-brand" to="/">
-          <img class="brand-mark" src="/assets/alphex/logo-mark.svg" alt="" aria-hidden="true">
+          <img class="brand-mark" :src="assetUrl('/assets/alphex/logo-mark.svg')" alt="" aria-hidden="true">
           <div>
             <strong>ALPHABET</strong>
             <p>알파벳 프론트엔드 데모</p>

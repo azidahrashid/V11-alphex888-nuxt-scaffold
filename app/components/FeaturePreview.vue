@@ -2,6 +2,7 @@
 import { miniGames } from '~/data/site'
 
 const { openAuth } = useAuthModal()
+const assetUrl = useAssetUrl()
 </script>
 
 <template>
@@ -13,12 +14,12 @@ const { openAuth } = useAuthModal()
         <span>Game buttons are frontend-only demo actions. They open the login modal and do not call any provider API.</span>
       </div>
 
-      <img class="podium" src="/assets/alphex/stage-podium.svg" alt="Mini game stage" loading="lazy">
+      <img class="podium" :src="assetUrl('/assets/alphex/stage-podium.svg')" alt="Mini game stage" loading="lazy">
 
       <div class="mini-game-strip">
         <article v-for="game in miniGames" :key="game.title" class="mini-game-card">
           <NuxtLink :to="game.route" class="mini-game-art">
-            <img :src="game.image" :alt="game.title" loading="lazy">
+            <img :src="assetUrl(game.image)" :alt="game.title" loading="lazy">
           </NuxtLink>
           <h3>{{ game.title }}</h3>
           <button type="button" class="card-link primary" @click="openAuth('login')">PLAY NOW</button>

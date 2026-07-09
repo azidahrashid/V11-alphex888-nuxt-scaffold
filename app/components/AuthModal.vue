@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { isOpen, mode, closeAuth, switchAuth } = useAuthModal()
+const assetUrl = useAssetUrl()
 
 const loginForm = reactive({
   username: '',
@@ -73,7 +74,7 @@ function submitRegister() {
         <button type="button" class="modal-close" aria-label="Close auth modal" @click="closeAuth">×</button>
 
         <div class="auth-dialog-head">
-          <img src="/assets/alphex/logo-mark.svg" alt="" aria-hidden="true">
+          <img :src="assetUrl('/assets/alphex/logo-mark.svg')" alt="" aria-hidden="true">
           <p>{{ modalSubtitle }}</p>
           <h2>{{ modalTitle }}</h2>
         </div>

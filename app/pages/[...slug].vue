@@ -3,6 +3,7 @@ import { featureAssets, miniGames, navItems } from '~/data/site'
 
 const route = useRoute()
 const { openAuth } = useAuthModal()
+const assetUrl = useAssetUrl()
 
 const slug = computed(() => {
   const raw = route.params.slug
@@ -130,7 +131,7 @@ useSeoMeta({
     </div>
 
     <div v-if="page.image" class="subpage-art">
-      <img :src="page.image" :alt="page.title" loading="lazy">
+      <img :src="assetUrl(page.image)" :alt="page.title" loading="lazy">
     </div>
   </section>
 </template>

@@ -5,11 +5,6 @@ export type NavItem = {
   description: string
 }
 
-export type NavGroup = {
-  label: string
-  items: NavItem[]
-}
-
 export type GameCard = {
   eyebrow: string
   title: string
@@ -32,28 +27,13 @@ export const navItems: NavItem[] = [
   { label: '스포츠 베팅규정', english: 'Betting Rules', href: '/sports-betting-rules', description: '스포츠 베팅규정 안내' }
 ]
 
-export const navGroups: NavGroup[] = [
-  {
-    label: '스포츠',
-    items: navItems.filter(item => ['/live', '/pre-match', '/virtual-sports', '/sports-betting-rules'].includes(item.href))
-  },
-  {
-    label: '게임',
-    items: navItems.filter(item => ['/live-casino', '/mini-games', '/slot-games'].includes(item.href))
-  },
-  {
-    label: '혜택/지원',
-    items: navItems.filter(item => ['/promotions', '/coupon-bonus', '/faqs'].includes(item.href))
-  }
-]
-
 export const heroCards: GameCard[] = [
   {
     eyebrow: 'LIVE SPORTS',
     title: '라이브 스포츠의 미래',
     subtitle: '본질적인 가치에 집중합니다.',
     href: '/live',
-    image: '/assets/alphex/card-live-sports.svg',
+    image: '/assets/alphex/5262-mobilelivesports.svg',
     cta: 'PLAY NOW'
   },
   {
@@ -61,7 +41,7 @@ export const heroCards: GameCard[] = [
     title: '프리미엄 프라이빗 클럽',
     subtitle: '라이브 카지노를 경험하는 가장 완벽한 공간으로 당신을 초대합니다.',
     href: '/live-casino',
-    image: '/assets/alphex/card-live-casino.svg',
+    image: '/assets/alphex/5262-mobilelivecasino.svg',
     cta: 'PLAY NOW'
   },
   {
@@ -69,7 +49,7 @@ export const heroCards: GameCard[] = [
     title: '가볍고 심플한 게임 플레이',
     subtitle: '가장 트렌디한 경험을 선사합니다.',
     href: '/mini-games',
-    image: '/assets/alphex/card-mini-games.svg',
+    image: '/assets/alphex/5262-mobileminigames.svg',
     cta: 'PLAY NOW'
   },
   {
@@ -77,7 +57,7 @@ export const heroCards: GameCard[] = [
     title: '잭팟을 향한 위대한 여정',
     subtitle: '진정한 슬롯 매니아를 위해 특별한 경험을 제공합니다.',
     href: '/slot-games',
-    image: '/assets/alphex/card-slot-games.svg',
+    image: '/assets/alphex/5262-mobileslots.svg',
     cta: 'PLAY NOW'
   },
   {
@@ -85,7 +65,7 @@ export const heroCards: GameCard[] = [
     title: '이벤트',
     subtitle: '알파벳 특권과 프리미엄 혜택',
     href: '/promotions',
-    image: '/assets/alphex/card-promotions.svg',
+    image: '/assets/alphex/5262-mobilepromos.svg',
     cta: '주요 혜택 보기'
   }
 ]

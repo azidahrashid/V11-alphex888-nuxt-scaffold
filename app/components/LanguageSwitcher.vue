@@ -5,6 +5,7 @@ const languages = [
   { code: 'zh', label: 'ZH', flag: '/assets/alphex/flag-zh.svg' }
 ]
 const active = ref('ko')
+const assetUrl = useAssetUrl()
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const active = ref('ko')
       :class="{ active: active === language.code }"
       @click="active = language.code"
     >
-      <img :src="language.flag" :alt="language.label" loading="lazy">
+      <img :src="assetUrl(language.flag)" :alt="language.label" loading="lazy">
       <span>{{ language.label }}</span>
     </button>
   </div>

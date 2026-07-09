@@ -1,34 +1,36 @@
-# ALPHEX888 Nuxt Frontend Recreation
+# ALPHABET / alphex888 Nuxt Frontend Recreation
 
-This is a GitHub-ready Nuxt 3 frontend recreation of the public ALPHABET / alphex888 landing page structure. It focuses on matching the visible dark-gold layout, Korean navigation, homepage cards, category pages, modal interactions, and responsive behavior.
+This project is a static Nuxt 3 frontend recreation for development/testing. It does not implement real gambling, betting, wallet, payment, account, or casino-provider backend functions.
 
-This is not a backend clone. It does not include real gambling, betting, wallet, payment, provider API, session, account, LiveChat, token, cookie, or private integration logic.
+## What was rebuilt in this version
 
-## What is included
-
-- Nuxt 3 project with `srcDir: app/`
-- Rebuilt header with desktop dropdown navigation and mobile menu
-- Korean navigation routes mapped to Nuxt pages
-- Homepage with five primary original-style visual cards:
+- Homepage changed to a closer original-style five-section landing layout:
   - LIVE SPORTS
   - LIVE CASINO
   - MINI GAMES
   - SLOT GAMES
   - PROMOTIONS
-- Login and join/register modal interactions
-- Basic frontend form validation
-- Category/menu cards with valid page routing
-- Mini-games section with demo-only play buttons
-- Catch-all route layout for valid-looking subpages
-- Local SVG assets in `public/assets/alphex/`
-- No broken hotlinked image dependency
-- Static-deployment-friendly configuration for GitHub Pages
+- Removed the previous extra homepage category/grid sections from `/` so the homepage follows the live page sequence more closely.
+- Reworked header into a flat Korean navigation row matching the public page structure.
+- Added fixed dark translucent header, right-side section dots, full-screen hero panels, gold CTA buttons, responsive stacked mobile layout, and footer/legal block.
+- Added local replacement visuals using original-style names under `public/assets/alphex/`.
+- Kept login/register as frontend-only demo modals with basic validation.
+- Kept all menu links mapped to valid Nuxt routes so clicks do not produce empty/broken pages.
+- No external hotlinked assets are required.
 
-## Install and run
+## Run locally
 
 ```bash
 npm install
 npm run dev
+```
+
+Open the URL printed by Nuxt, usually `http://localhost:3000/`.
+
+For port 3001:
+
+```bash
+npm run dev:3001
 ```
 
 ## Build
@@ -37,61 +39,26 @@ npm run dev
 npm run build
 ```
 
-For static output, use:
+## Static generation / GitHub Pages
 
 ```bash
 npm run generate
 ```
 
-The generated static site will be created in `.output/public`.
-
-## GitHub Pages note
-
-For a GitHub Pages project site, set the base URL to your repository name before generating:
+For a GitHub Pages repository subpath, set `NUXT_APP_BASE_URL` before generating, for example:
 
 ```bash
 NUXT_APP_BASE_URL=/your-repo-name/ npm run generate
 ```
 
-For a user/organization site deployed at the domain root, keep the default `/` base URL.
+On Windows PowerShell:
 
-## Main structure
-
-```text
-app/
-  app.vue
-  assets/css/extracted.css
-  components/
-    AuthModal.vue
-    GameCard.vue
-    GameGrid.vue
-    HomeLanding.vue
-    LanguageSwitcher.vue
-    NavigationMenu.vue
-    SiteFooter.vue
-    SiteHeader.vue
-  composables/useAuthModal.ts
-  data/site.ts
-  pages/index.vue
-  pages/[...slug].vue
-public/assets/alphex/
-  local SVG visual assets
-nuxt.config.ts
-package.json
+```powershell
+$env:NUXT_APP_BASE_URL="/your-repo-name/"; npm run generate
 ```
 
-The root `app.vue` file is kept only as a compatibility file. The active entry is `app/app.vue` because `nuxt.config.ts` uses `srcDir: 'app/'`.
+## Important limitations
 
-## Interaction behavior
+The public website's original image files were blocked during extraction, so the project uses local replacement SVG assets designed to match the dark-gold visual direction. Because of that, this is a close frontend recreation, not a guaranteed pixel-identical clone.
 
-Login and register are frontend-only demo modals. The forms validate basic fields and show success messages locally. They do not create accounts, sessions, wallets, payments, game access, betting tickets, or backend requests.
-
-Game and category play buttons open the login modal. Navigation links use Nuxt routes and render safe static layouts instead of broken or blank pages.
-
-## Asset strategy
-
-The original website image references were not embedded as remote hotlinks. The project uses local SVG replacements designed to match the same dark, gold, casino/sports promotional art direction. Replace these with approved owned assets if exact brand assets are available.
-
-## Limitations
-
-This is a visual/frontend recreation, not a byte-for-byte runtime clone. Exact proprietary images, private JavaScript, protected APIs, session behavior, and backend flows are intentionally excluded. Some styling is recreated from the publicly visible structure and visual direction rather than copied from blocked runtime assets.
+No private keys, credentials, backend integrations, payment logic, wallet logic, betting logic, odds engines, casino providers, or real authentication sessions are included.

@@ -1,43 +1,39 @@
-# Migration Report
+# Migration / Rebuild Report
 
-## Source checked
+## Source target
 
-- `https://www.alphex888.com`
+- Public reference: `https://www.alphex888.com`
 
-The publicly visible page exposes Korean navigation labels, five primary homepage sections, language options, image references, and the footer/legal text. The rebuilt Nuxt project uses those visible labels and sections as the structural reference.
+## Runtime structure observed
 
-## What was rebuilt
+Crawler-visible homepage content exposed a flat Korean navigation list and a five-block homepage sequence:
 
-- Header and brand area
-- Desktop dropdown navigation
-- Mobile menu
-- Language switcher demo
-- Login and register modals
-- Frontend validation for login/register forms
-- Homepage visual card layout
-- Category/menu card section
-- Mini-games card strip
-- Catch-all Nuxt route pages for public links
-- Footer with the visible notice text
-- Local SVG replacement assets to avoid broken hotlinks
+1. LIVE SPORTS — 라이브 스포츠의 미래 — 본질적인 가치에 집중합니다.
+2. LIVE CASINO — 프리미엄 프라이빗 클럽 — 라이브 카지노를 경험하는 가장 완벽한 공간으로 당신을 초대합니다.
+3. MINI GAMES — 가볍고 심플한 게임 플레이 — 가장 트렌디한 경험을 선사합니다.
+4. SLOT GAMES — 잭팟을 향한 위대한 여정 — 진정한 슬롯 매니아를 위해 특별한 경험을 제공합니다.
+5. PROMOTIONS — 이벤트 — 알파벳 특권과 프리미엄 혜택.
 
-## Safety and scope boundaries
+The original remote image files returned 403 Forbidden during extraction, so local replacement assets were created instead of hotlinking broken assets.
 
-The project intentionally excludes:
+## Files changed for closer layout
 
-- Real login/session persistence
-- Real registration/account creation
-- Wallet or payment functions
-- Gambling/betting execution logic
-- Odds, casino, slot, mini-game, or provider backend integrations
-- Private API calls
-- Tokens, cookies, keys, or credentials
-- LiveChat account integration
+- `app/components/HomeLanding.vue`
+- `app/components/SiteHeader.vue`
+- `app/components/NavigationMenu.vue`
+- `app/pages/index.vue`
+- `app/data/site.ts`
+- `app/assets/css/extracted.css`
+- `public/assets/alphex/5262-mobilelivesports.svg`
+- `public/assets/alphex/5262-mobilelivecasino.svg`
+- `public/assets/alphex/5262-mobileminigames.svg`
+- `public/assets/alphex/5262-mobileslots.svg`
+- `public/assets/alphex/5262-mobilepromos.svg`
 
-## Known limitations
+## Behavior retained
 
-The original site’s protected image URLs were not available for direct embedding in this environment, so local visual replacements were created. The result is designed to be much closer in layout, spacing, color, and interaction behavior, but it is not a byte-for-byte copy of protected runtime CSS or proprietary assets.
-
-## Verification note
-
-The project files were statically reviewed and structured for Nuxt 3. In this sandbox, dependency installation/build verification was limited by unavailable package/network resolution, so run `npm install`, `npm run dev`, and `npm run build` locally or in CI after unzipping.
+- Login modal opens from login buttons and PLAY NOW buttons.
+- Register modal opens from JOIN buttons.
+- Frontend validation is implemented.
+- Routes render real placeholder layouts instead of broken pages.
+- No gambling/payment/wallet/backend functionality is implemented.

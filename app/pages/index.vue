@@ -6,9 +6,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="home-page">
-    <HomeLanding />
-    <GameGrid />
-    <FeaturePreview />
-  </div>
+  <HomeLanding />
 </template>
