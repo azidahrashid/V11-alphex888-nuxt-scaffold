@@ -1,16 +1,22 @@
 {
-  "source": "https://www.alphex888.com",
-  "generatedFrom": "crawler-visible content and manually verified public image links",
-  "assets": [
-    "https://builder.spring-builder.prod.yospace.ai/fs/userFiles-v2/alphabet-18753930/images/5262-mobilelivesports.png?v=1678355432",
-    "https://builder.spring-builder.prod.yospace.ai/fs/userFiles-v2/alphabet-18753930/images/5262-mobilelivecasino.png?v=1678355432",
-    "https://builder.spring-builder.prod.yospace.ai/fs/userFiles-v2/alphabet-18753930/images/5262-mobileminigames.png?v=1678355432",
-    "https://builder.spring-builder.prod.yospace.ai/fs/userFiles-v2/alphabet-18753930/images/5262-mobileslots.png?v=1678355432",
-    "https://builder.spring-builder.prod.yospace.ai/fs/userFiles-v2/alphabet-18753930/images/5262-mobilepromos.png?v=1678355432",
-    "https://www.alphex888.com/fs/userFiles-v2/alphabet-18753930/images/11827-casino-hero-m.webp",
-    "https://www.alphex888.com/fs/userFiles-v2/alphabet-18753930/images/0187351240278948-frame-29-16774930960998.webp",
-    "https://www.alphex888.com/fs/userFiles-v2/alphabet-18753930/images/036476149022-promotion-box.webp",
-    "https://www.alphex888.com/fs/userFiles-v2/alphabet-18753930/images/8788-alphabet-landing-page-demo02-16762774198298.webp"
-  ],
-  "note": "Refresh by running npm run migrate locally with Playwright."
+  "card-live-casino.svg": "/assets/alphex/card-live-casino.svg",
+  "card-live-sports.svg": "/assets/alphex/card-live-sports.svg",
+  "card-mini-games.svg": "/assets/alphex/card-mini-games.svg",
+  "card-promotions.svg": "/assets/alphex/card-promotions.svg",
+  "card-slot-games.svg": "/assets/alphex/card-slot-games.svg",
+  "flag-en.svg": "/assets/alphex/flag-en.svg",
+  "flag-ko.svg": "/assets/alphex/flag-ko.svg",
+  "flag-zh.svg": "/assets/alphex/flag-zh.svg",
+  "icon-blast.svg": "/assets/alphex/icon-blast.svg",
+  "icon-magic-wheel.svg": "/assets/alphex/icon-magic-wheel.svg",
+  "icon-penalty.svg": "/assets/alphex/icon-penalty.svg",
+  "icon-powerball.svg": "/assets/alphex/icon-powerball.svg",
+  "icon-x50.svg": "/assets/alphex/icon-x50.svg",
+  "logo-mark.svg": "/assets/alphex/logo-mark.svg",
+  "page-casino.svg": "/assets/alphex/page-casino.svg",
+  "page-coupon.svg": "/assets/alphex/page-coupon.svg",
+  "page-promotions.svg": "/assets/alphex/page-promotions.svg",
+  "page-slots.svg": "/assets/alphex/page-slots.svg",
+  "page-sports.svg": "/assets/alphex/page-sports.svg",
+  "stage-podium.svg": "/assets/alphex/stage-podium.svg"
 }

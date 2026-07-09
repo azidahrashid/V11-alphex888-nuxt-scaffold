@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const languages = [
-  { code: 'ko', label: 'KO', flag: 'https://builder.spring-builder.prod.yospace.ai/assets/images/flags64/ko-kr.svg?v=1770109155' },
-  { code: 'en', label: 'EN', flag: 'https://builder.spring-builder.prod.yospace.ai/assets/images/flags64/en.svg?v=1770109155' },
-  { code: 'zh', label: 'ZH', flag: 'https://builder.spring-builder.prod.yospace.ai/assets/images/flags64/zh-hans-cn.svg?v=1770109155' }
+  { code: 'ko', label: 'KO', flag: '/assets/alphex/flag-ko.svg' },
+  { code: 'en', label: 'EN', flag: '/assets/alphex/flag-en.svg' },
+  { code: 'zh', label: 'ZH', flag: '/assets/alphex/flag-zh.svg' }
 ]
 const active = ref('ko')
 </script>
 
 <template>
-  <div class="language-switcher" aria-label="Language switcher placeholder">
+  <div class="language-switcher" aria-label="Language switcher demo">
     <button
       v-for="language in languages"
       :key="language.code"

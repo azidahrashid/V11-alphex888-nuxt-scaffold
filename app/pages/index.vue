@@ -1,14 +1,13 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'ALPHABET / Nuxt Migration Scaffold',
-  description: 'Nuxt component scaffold migrated from public front-end structure with backend logic stubbed.'
+  title: 'ALPHABET / 알파벳',
+  description: 'ALPHABET dark-gold landing page recreation with demo-only frontend interactions.'
 })
 </script>
 
 <template>
   <div class="home-page">
-    <HeroSection />
-    <TrustBar />
+    <HomeLanding />
     <GameGrid />
     <FeaturePreview />
   </div>

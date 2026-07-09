@@ -3,40 +3,41 @@
 ## Source checked
 
 - `https://www.alphex888.com`
-- Visible public content included Korean navigation, homepage game sections, language selector images, LiveChat references and a footer notice.
 
-## Rendering classification
+The publicly visible page exposes Korean navigation labels, five primary homepage sections, language options, image references, and the footer/legal text. The rebuilt Nuxt project uses those visible labels and sections as the structural reference.
 
-The crawler-visible response exposes meaningful page content, navigation labels, homepage sections and image references. The scaffold therefore treats the public landing page as a rendered/public front-end that can be decomposed into Nuxt components.
+## What was rebuilt
 
-For full certainty on JavaScript-generated runtime DOM/CSS, run the Playwright extraction script locally:
+- Header and brand area
+- Desktop dropdown navigation
+- Mobile menu
+- Language switcher demo
+- Login and register modals
+- Frontend validation for login/register forms
+- Homepage visual card layout
+- Category/menu card section
+- Mini-games card strip
+- Catch-all Nuxt route pages for public links
+- Footer with the visible notice text
+- Local SVG replacement assets to avoid broken hotlinks
 
-```bash
-TARGET_URL=https://www.alphex888.com npm run migrate:extract
-npm run migrate:clean-css
-npm run migrate:convert
-```
+## Safety and scope boundaries
 
-## What was migrated into the scaffold
+The project intentionally excludes:
 
-- Header/navigation
-- Language selector placeholder
-- Login/join placeholders
-- Homepage hero scaffold
-- Five main homepage game cards
-- Mini-games feature preview
-- Footer notice
-- Catch-all placeholder pages for public routes
+- Real login/session persistence
+- Real registration/account creation
+- Wallet or payment functions
+- Gambling/betting execution logic
+- Odds, casino, slot, mini-game, or provider backend integrations
+- Private API calls
+- Tokens, cookies, keys, or credentials
+- LiveChat account integration
 
-## What was intentionally not migrated
+## Known limitations
 
-- Login/session backend
-- Payment or wallet flows
-- Betting execution logic
-- Private provider/API calls
-- LiveChat account credentials
-- Tokens, cookies, API keys or private headers
+The original site’s protected image URLs were not available for direct embedding in this environment, so local visual replacements were created. The result is designed to be much closer in layout, spacing, color, and interaction behavior, but it is not a byte-for-byte copy of protected runtime CSS or proprietary assets.
 
-## Notes
+## Verification note
 
-The included CSS is component-friendly recreated CSS plus cleanup-ready pipeline. It does not claim to be a byte-for-byte copy of all runtime styles until the Playwright script is run from a network-enabled local machine.
+The project files were statically reviewed and structured for Nuxt 3. In this sandbox, dependency installation/build verification was limited by unavailable package/network resolution, so run `npm install`, `npm run dev`, and `npm run build` locally or in CI after unzipping.

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { NavItem } from '~/data/site'
+import type { NavGroup } from '~/data/site'
 
 defineProps<{
-  items: NavItem[]
+  groups: NavGroup[]
 }>()
 
 const emit = defineEmits<{
@@ -12,14 +12,24 @@ const emit = defineEmits<{
 
 <template>
   <nav class="navigation-menu" aria-label="Primary navigation">
-    <NuxtLink
-      v-for="item in items"
-      :key="item.href"
-      class="nav-link"
-      :to="item.href"
-      @click="emit('navigate')"
-    >
-      {{ item.label }}
-    </NuxtLink>
+    <div v-for="group in groups" :key="group.label" class="nav-group">
+      <button type="button" class="nav-group-trigger">
+        <span>{{ group.label }}</span>
+        <span class="chevron" aria-hidden="true">⌄</span>
+      </button>
+
+      <div class="nav-dropdown">
+        <NuxtLink
+          v-for="item in group.items"
+          :key="item.href"
+          class="nav-link"
+          :to="item.href"
+          @click="emit('navigate')"
+        >
+          <span class="nav-label">{{ item.label }}</span>
+          <small>{{ item.english }}</small>
+        </NuxtLink>
+      </div>
+    </div>
   </nav>
 </template>

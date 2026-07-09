@@ -1,15 +1,10 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-
-function showStubNotice(action: string) {
-  if (!config.public.enableAuthStub) return
-  window.alert(`${action} is intentionally stubbed for development. Connect your own authorised backend/API here.`)
-}
+const { openAuth } = useAuthModal()
 </script>
 
 <template>
-  <div class="auth-panel" aria-label="Authentication placeholder">
-    <button type="button" class="btn btn-ghost" @click="showStubNotice('Login')">LOGIN</button>
-    <button type="button" class="btn btn-gold" @click="showStubNotice('Join')">JOIN</button>
+  <div class="auth-panel" aria-label="Demo authentication actions">
+    <button type="button" class="btn btn-login" @click="openAuth('login')">LOGIN</button>
+    <button type="button" class="btn btn-join" @click="openAuth('register')">JOIN</button>
   </div>
 </template>

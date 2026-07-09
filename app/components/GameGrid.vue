@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import { heroCards } from '~/data/site'
+import { navItems } from '~/data/site'
+
+const { openAuth } = useAuthModal()
+const categories = navItems.filter(item => item.href !== '/sports-betting-rules')
 </script>
 
 <template>
-  <section id="games" class="game-grid-section" aria-labelledby="games-heading">
-    <div class="section-heading">
-      <p class="section-kicker">Captured homepage sections</p>
-      <h2 id="games-heading">Main content blocks</h2>
-      <span>The homepage was split into reusable card components instead of a raw HTML copy.</span>
+  <section class="category-section" aria-labelledby="category-heading">
+    <div class="section-heading compact">
+      <p class="section-kicker">CATEGORY MENU</p>
+      <h2 id="category-heading">메뉴 바로가기</h2>
+      <span>Original menu labels are mapped to Nuxt routes so each click opens a valid page layout.</span>
     </div>
 
-    <div class="game-grid">
-      <GameCard v-for="(card, index) in heroCards" :key="card.eyebrow" :card="card" :index="index" />
+    <div class="category-grid">
+      <article v-for="item in categories" :key="item.href" class="category-card">
+        <NuxtLink :to="item.href" class="category-main-link">
+          <small>{{ item.english }}</small>
+          <strong>{{ item.label }}</strong>
+          <span>{{ item.description }}</span>
+        </NuxtLink>
+        <button type="button" @click="openAuth('login')">PLAY</button>
+      </article>
     </div>
   </section>
 </template>
