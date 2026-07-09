@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#170908"/>
+      <stop offset=".42" stop-color="#080706"/>
+      <stop offset="1" stop-color="#1e160b"/>
+    </linearGradient>
+    <radialGradient id="gold" cx="50%" cy="28%" r="62%">
+      <stop stop-color="#f6d491" stop-opacity=".42"/>
+      <stop offset=".52" stop-color="#d8ad63" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#000" flood-opacity=".65"/></filter>
+  </defs>
+  <rect width="480" height="760" fill="url(#bg)"/>
+  <rect width="480" height="760" fill="url(#gold)"/>
+  <path d="M0 0h480v760H0z" fill="none" stroke="#d8ad63" stroke-opacity=".24" stroke-width="2"/>
+  <path d="M-30 120C100 38 284 22 515 92" fill="none" stroke="#f6d491" stroke-width="2" opacity=".12"/>
+  <path d="M-80 520C75 430 274 408 560 470" fill="none" stroke="#f6d491" stroke-width="2" opacity=".08"/>
+  <g filter="url(#shadow)"><rect x="108" y="150" width="126" height="178" rx="18" fill="#fff3dc" opacity=".9" transform="rotate(-9 171 239)"/><rect x="246" y="140" width="126" height="178" rx="18" fill="#201209" stroke="#e7bc71" stroke-width="5" transform="rotate(7 309 229)"/><circle cx="170" cy="230" r="28" fill="#8b1916" opacity=".84"/><path d="M308 190l34 48-34 48-34-48Z" fill="#d8ad63"/></g>
+  <circle cx="240" cy="620" r="150" fill="#000" opacity=".2"/>
+  <text x="240" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="5" fill="#f8d99a">ALPHABET</text>
+  <text x="240" y="602" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#fff4df">LIVE CASINO</text>
+  <text x="240" y="636" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d6c8b5">프라이빗 클럽</text>
+</svg>
